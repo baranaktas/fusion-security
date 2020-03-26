@@ -1,0 +1,117 @@
+/Fusion Security/
+
+TEMEL GNU/Linux
+- Terminal 
+*
+Terminal, Apple bilgisayarları ve Linux işletim sistemi kullanılan bilgisayarların içerisinde yer alan, kullanıcıların bir klavye ve ekran yardımıyla işletim sistemi yada yazılımları kontrol etmesine yardımcı olan komut ekranıdır.
+*
+- GNU Projesi
+*
+GNU Projesi ilk olarak Richard Stallman tarafından 1978 yılında MIT'de geliştirilmeye başlamıştır. Richard Stallman 1983 yılında herkesin özgürce kullanabileceği, özgürce dağıtabileceği ve istenilen şekilde değiştirilebilecek, geliştirilebilecek, özelleştirilebilecek bir Unix sistemi için çalışmalara başlamıştı. Ve sonunda tam olarak 1985 yılında GNU/Linux'u Dünya'ya duyurmuştu. (Asıl yapımcı Linus Torvalds)
+*
+- GNU: GNU's Not Unix = GNU Unix Değildir
+*
+GNU görünüm olarak Unix'e bezemektedir fakat herhangi bir Unix kodunu içinde barındırmamaktadır ve özgür bir yazılımdır (Open Source Code). Linux temel olarak bir çekirdek anlamına gelmektedir (Kernel). Linux tek başına bir İşletim Sistemi değildir (En büyük hata!) Linux donanımlar ile etkileşim halinde olan ve donanım ile sistem arasında olan ana kök yapıdır.
+*
+- Neden "Linux/GNU" değil de, "GNU/Linux" ?
+*
+Kullanıcılır neden Linux/GNU değil de, GNU/Linux'u savunur. Doğru ve uygun olan baş katkıcıyı ilk önce anmaktır. GNU'nun sisteme katkısı ve aynı zamanda tüm faliyetleri başlatan kişilerden oluşmuş olmasından kaynaklı ilk başta kendi isimlerinin yer almasını istemişlerdir.
+*
+- Everything is a file
+*
+Linux sistemlerde ki herşeyin bir dosya olduğunu ve bundan dolayı Linux sistemlerin üstünde yapılacak değişikliklerin herkes tarafından kolayca anlaşılır ve yazı yazmak kadar kolay olduğu vurgulanmıştır. Linux sistemlerde değişiklik ve özelleştirme yapmak için herhangi bir ekstra programa ihtiyacınız yoktur. Sadece istediğiniz bir özelleştirme için ilgili dosyayı açın, istediğiniz özellikleri dosyaya ekleyip, değiştirip kaydedin.
+*
+
+TEMEL GNU/Linux - Komutlar
+- pwd : Hangi dizinde bulunulduğunu gösterir. (root@kali:~/Desktop# pwd [/root/Desktop])
+- man : Komut hakkında detaylı bilgi almak için kullanılır. (root@kali:~# man sqlmap)
+- mkdir : Yeni bir dizin (klasör) oluşturur. (root@kali:~/Desktop# mkdir Fusion)
+- touch : Yeni bir dosya oluşturur. (root@kali:~/Desktop# touch Fusion.py)
+- rm : Dosya siler. (root@kali:~/Desktop# rm Fusion.py
+- rmdir : Dizin (klasör) siler. (root@kali:~/Desktop# rmdir Fusion)
+- cp : Dosya veya klasörü kopyalar. (root@kali:~/Desktop# cp -r sa /var/www/html/)
+- mv : Dosya veya klasörü taşımak için kullanılır. (root@kali:~/Desktop# mv Fusion.py /var/www/html
+- find : Gelişmiş arama aracıdır. (root@kali:~/Desktop/Fusion# find /root/Desktop/Fusion/ -name "*.txt")
+- cd : Dizin değiştirir. (root@kali:~# cd Desktop)
+- cd .. : Alt dizine geçer. (root@kali:~/Desktop# cd ..)
+- ls : Doya ve dizinleri listeleyip, özelliklerini görüntüler. (root@kali:~/Desktop# ls -la)
+- cat : Dosya içeriğini terminal de görüntüler. (root@kali:~/Desktop# cat Fusion.txt
+- echo : Belirtilen ifadeyi ekrana basar. (root@kali:~/Desktop# echo "Fusion"
+- head : Bir dosyayı baştan itibaren istenilen sayıda satırın ekrana basar. (root@kali:~/Desktop# head Fusion.txt)
+- tail : Head gibi çalışır, farkı sondan itibaren ekrana basar. (root@kali:~# tail -f /var/log/apache2/accsess.log)
+- grep : Metin dosyaları içerisinde belirli değerleri arar. (root@kali:~/Desktop# grep Fusion.py "print"
+- uname : Sistem bilgilerini görüntüler. (root@kali:~# uname -a)
+- chown : Dosya ve klasörlerin sahibi, grubunu değiştirir. (root@kali:~/Desktop# chown root fusion.txt
+- service : Servislerin yönetimi için kullanılır. (root@kali:~# service apache2 status)
+- fdisk : Sistemde ki bağlı diskleri ve donanımları gösterir. (root@kali:~# fdisk -l) 
+- setxkbmap: Klavye dilini değiştirir. (root@kali:~# setxkbmap tr)
+- last : Sisteme en son giren kullanıcıları listeler. (root@kali:~/Desktop# last)
+- history : Terminalde çalıştırılan kodları sırasıyla ekrana basar. (root@kali:~/Desktop# history)
+- nano : Terminal üzerinde bir dosya düzenleme yazılımı açar.
+- locate : Gelişmiş bir dosya arama aracıdır. (root@kali:~# locate nmap)
+- | : Birçok komudun aynı satırda çalışmasını sağlar. 
+
+TEMEL GNU/Linux - Çıktı Yönlendirme
+- echo "fusion1" > deneme_dosya (Bastırılan yazıyı hedef dosyaya yazdırır.)
+- echo "fusion2" >> deneme_dosya (Bastırılan yazıyı önce ki yazıları silmeden alt satıra ekler.)
+- cut -d ":" -f1 < /etc/passwd (":" sorasında ki 1. segmentasyonu ekrana bastırır.)
+- cat /etc/passwd | cut -d ":" -f1 (
+- cat /etc/passwd | cut -d ":" -f1 | grep root ( Diğerkileriyle aynı, grep komutu sayesinde root dizinini bulur.)
+
+TEMEL GNU/Linux - Dosya Sistemi
+- /bin : Kullanıcı ve sistem yöneticisine ait çalıştırılabilir dosyaları barındırır.
+- /dev : Donanımlara erişebilmek için gerekli dosyaları barındırır.
+- /etc : Sistem konfigürasyonları için gerekli dosyaları barındırır.
+- /lib : Sistem kütüphanelerini barındırır.
+- /sbin : Sistem yöneticisine ait çalıştırılabilir dosyaları barındırır.
+- /home : Kllanıcılar ait dizindir.
+- /mnt : Sisteme dışarıdan bağlanacak olan donanım aygıtlarının, bağlantı noktalarını belirten dizidir.
+- /root : Bir sistemde en yetkili kullanıcı olan "root" kullanıcısına ait dizindir.
+- /tmp : Geçici dosyaların yer aldığı dizindir.
+- /usr : Paylaşılan dosyaların barındığı dizindir. Burada çalışabilen dosyalar bulunmakla beraber, döküman ve programlara it dosyalar yer almaktadır.
+- /proc : Sistem hakkında gerekli bilgilerin bulunduğu sanal dizindir.
+- /boot : Linux Kernelini barındıran, sistem haritalarını ve ikinci seviye boot yükleyicilerini barındıran dizin.
+- /opt : Add-on (3. Parti) yazılımların olduğu alandır.
+
+TEMEL GNU/Linux - Dosya İzinleri
+- Her dosya ve klasörün hem sahibi hem de grubu vardır.
+- Bu izinler read(4),write(2),execute(1) olmaktadır. (Okuma,yazma,çalıştırma)
+- chmod 777 dosyaadı
+- chmod +x dosyaadı, uygulama
+- chmod g+wx uygulama
+
+TEMEL GNU/Linux - Network Ayarları
+- ifconfig : Mevcut ağ arayüzlerinin yönetimi için kullanılır.
+- iwconfig : Mevcut ağ arayüzlerini detaylı bir şekilde gösterir.
+
+TEMEL GNU/Linux - Kullanıcı Yönetimi
+- /etc/passwd : Kullanıcı bilgileri tutulur.
+- /etc/shadow : Kullanıcıların şifre özetleri tutulur.
+- useradd baran
+- userdel baran
+
+TEMEL GNU/Linux - Süreç Yönetimi
+- ps -e veya ps -A : Ps aux'dan biraz daha sade bir şekilde, yazı biçiminde listeler. 
+- ps aux : Sistem de çalışan işlemleri listeler. 
+- ps -p ID : Sistem üzerinde çalışan işlemi ID'si ile bulur.
+- ps -e | grep apache2 : Sistemde ki işlemi ismi ile ID'sini bulur. 
+- ps aux -sort=pcpu,+pmem : Sistem de en çok yer kaplayan ve CPU yiyen işlemleri gösterir
+- kill ID : İşlemi kapatır.
+- kill -9 ID : Eğer işlem kendi içerisinde birçok işleme ayrılmışaa Force ederek kapanmaya zorlar. 
+
+TEMEL GNU/Linux - Paket Yönetimi
+- apt-get install paketadi : Paketi indirmek, kurmak
+- apt-cache search paketadi : Paket aramak
+- apt-get update : Paket Listelerini güncellemek
+- apt-get upgrade : Kurulu tüm paketleri güncellemek
+- apt-get remove paketadi : Kurulu bir paketi kaldırmak.
+- git clone http://deneme.com (Hedef url'de ki dizinleri indirir.) (Ex: GitHub) 
+- wget http://deneme.com (Hedef url'de ki dosyaları indirir) (Ex: wget exploitdb.com/shellshock) 
+
+TEMEL GNU/Linux - Sistem Bilgisi
+- lsblk : Sisteme bağlı olan diskleri gösterir. 
+- df -h : Disklerin ne kadar alan kapladığını gösterir. 
+- cat /proc/cpuinfo : Sistemin detaylı CPU bilgilisini gösterir. 
+- cat /proc/meminfo : Sistemin detaylı alan bilgisini gösterir. 
+- netstat : Sisteme bağlı olan ağları gösterir. 
+- netstat -antl : Sistemin bağlandığı ağları gösterir.
